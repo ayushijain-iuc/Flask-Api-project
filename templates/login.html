@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST" action="/login">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+    
+    <!-- Show a logout button if the user is authenticated -->
+    {% if current_user.is_authenticated %}
+    <form method="GET" action="/logout">
+        <input type="submit" value="Logout">
+    </form>
+    {% endif %}
+</body>
+</html>
